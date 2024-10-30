@@ -1,0 +1,450 @@
+/*-------------------------------------------------------------------------------------------------
+    Projet  : Colibrimo - L'investissement immobilier durable accessible au plus grand nombre !
+    Version : 1.0
+---------------------------------------------------------------------------------------------------
+
+    CSS INDEX
+    =========================
+
+    01. Default CSS
+    02. Header
+    03. Accueil
+    04. Concept
+    05. Video
+    06. Contact
+    07. Footer
+    08. 404
+
+-------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------
+    01. Default CSS
+-----------------------------------------------*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --couleur1: #007F00;
+    --couleur2: #d6eddd;
+    --couleur3: #f5fbf5;
+    --couleur4: #005080;
+    --couleur5: #444444;
+    --couleur6: #80BCD0;
+    --couleur7: #444444;
+    --couleur8: #5F6666;
+    --couleur9: #FFFFFF;
+  }
+/*-----------------------------------------------
+    02. Header
+-----------------------------------------------*/
+
+.header-style 
+{
+    z-index: 999;
+    position: fixed;
+    top: 0; left: 0;
+    height: 100px; width: 100%;
+    
+    align-items: center;
+    color: var(--couleur8);
+    background-color: var(--couleur9);
+    box-shadow: 0 0px 10px 0 var(--couleur8);
+    animation: 1s ease-in-out 0s normal none 1 running fadeInDown; 
+}
+
+@media (max-width: 1024px) 
+{
+    .header-logo
+    {
+        display:none;
+    }
+
+    .header-links
+    {
+        @apply basis-1/2 ;
+        /* Réussir à centrer l'élément */
+    }
+}
+
+@media (min-width: 1024px) 
+{
+    .header-logo
+    {
+        @apply basis-2/5 flex;
+        padding-left: 15px;
+    }
+
+    .header-links
+    {
+        @apply basis-1/2 ;
+    }
+}
+
+.header-items
+{
+    @apply gap-x-20 font-medium flex;
+}
+
+.header-active
+{
+    color: var(--couleur1);
+}
+
+button:hover 
+{
+    color: var(--couleur1);
+}
+
+/*-----------------------------------------------
+    03. Accueil
+-----------------------------------------------*/
+
+.hero-bg 
+{
+    height: 980px;
+    padding-bottom: 115px;
+    background-position: bottom;
+    background-image: url(../public/hero/background.png);
+}
+
+.hero-container 
+{
+    @apply flex;
+    padding-top: 100px;
+    padding-bottom: 115px;
+    background-position: bottom;
+}
+
+@media (max-width: 1024px) 
+{
+    .hero-title
+    {
+        color: var(--couleur9);
+        font-family: Roboto;
+        font-weight: 500;
+        padding-top: 10%;
+        padding-left: 5%;
+        max-width: 50%;
+        font-size: 75px;
+        line-height: 80px;
+        margin-bottom: 40px;
+    }
+
+    .hero-text
+    {
+        color: var(--couleur9);
+        text-align: justify;
+        padding-left: 30px;
+        max-width: 650px;
+        font-size: 25px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+
+    .hero-image
+    {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) 
+{
+    .hero-title
+    {
+        color: var(--couleur9);
+        font-family: Roboto;
+        font-weight: 500;
+        padding-top: 130px;
+        padding-left: 30px;
+        max-width: 500px;
+        font-size: 75px;
+        line-height: 80px;
+        margin-bottom: 40px;
+    }
+
+    .hero-text
+    {
+        color: var(--couleur9);
+        text-align: justify;
+        padding-left: 30px;
+        max-width: 650px;
+        font-size: 25px;
+        line-height: 40px;
+        margin-bottom: 40px;
+    }
+
+    .hero-image
+    {
+        @apply flex;
+        height: 750px;
+        padding-top: 100px;
+        padding-left: 80px;
+        transform: rotate(-20deg);
+    }
+}
+
+/*-----------------------------------------------
+    04. Concept
+-----------------------------------------------*/
+
+.feature-style 
+{
+    padding-bottom: 125px;
+    padding-top: 125px;
+}
+
+.feature-title 
+{
+    color: var(--couleur8);
+    width: 100%;
+    font-size: 70px;
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 30px
+}
+
+.feature-grid 
+{
+    @apply grid grid-cols-2 gap-8;
+    margin: auto;
+    width: 75%;
+}
+
+.feature-item 
+{
+    background-color: var(--couleur3);
+    display: flex;
+    padding-top: 60px;
+    padding-left: 55px;
+    padding-right: 55px;
+    padding-bottom: 50px;
+    border-radius: 30px;
+}
+
+.feature-item:hover .feature-icon 
+{
+    background-color: var(--couleur1);
+}
+
+.feature-item:hover .feature-icon img 
+{
+    filter: brightness(0) invert(1);
+}
+
+.feature-icon 
+{
+    align-content: center;
+    background-color: var(--couleur2);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    transition: all 0.5s ease 0s;
+}
+
+.feature-icon img
+{
+    margin: auto;
+}
+
+.feature-content 
+{
+    width: calc(100% - 120px);
+    text-align: justify;
+    padding-left: 50px;
+}
+  
+.feature-content .title 
+{
+    color: var(--couleur8);
+    font-size: 30px;
+}
+  
+.feature-content .desc 
+{
+    color: var(--couleur8);
+    font-size: 16px;
+    
+}
+
+/*-----------------------------------------------
+    05. Video
+-----------------------------------------------*/
+
+.banner-style img
+{
+    width: 75%;
+    margin: auto;
+}
+
+.banner-item 
+{
+    position: relative;
+    padding-bottom: 125px;
+}
+
+.banner-player
+{
+    display: none;
+    position: absolute;
+    align-content: center;
+    top:0%;
+    left:0%;
+
+    background-color: var(--couleur1);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.banner-icon
+{
+    z-index: 100;
+    margin: auto;
+}
+
+  
+
+/*-----------------------------------------------
+    06. Contact
+-----------------------------------------------*/
+
+.newsletter-style
+{
+    position: relative;
+    width: 75%;
+    margin: auto;
+    padding-bottom: 100px;
+}
+
+.newsletter-item
+{
+    align-content: center;
+    text-align: center;
+}
+
+.newsletter-title 
+{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;    
+    font-size: 60px;
+    font-weight: 500;
+    color: var(--couleur8);
+}
+
+.newsletter-text
+{
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    color: var(--couleur8);
+    font-size: 23px;
+    text-align: center;
+}
+
+.newsletter-email
+{
+    position: absolute;
+    left: 50%;
+    top: 220px;
+    width: 620px;
+    margin-left: -310px;
+}
+
+.newsletter-input
+{
+    position: relative;
+    top:0px;
+    left:0px;
+    height:80px;
+    color: var(--couleur8);
+    @apply rounded-xl pl-5 py-7 w-full text-lg border-gray-500;
+}
+
+.newsletter-button
+{
+    position: absolute;
+    top:0px;
+    right:0px;
+    width:150px;
+    height:80px;
+    color: var(--couleur9);
+    @apply rounded-xl text-lg;
+}
+
+/*-----------------------------------------------
+    07. Footer
+-----------------------------------------------*/
+
+.footer-bg 
+{
+    width: 100%;
+    padding-top: 50px;  
+    background-position: top;
+    background-image: url('/footer/footer.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer-image 
+{
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.footer-image img
+{
+    margin: auto;
+    width: 300px;
+}
+
+.footer-content
+{
+    color: var(--couleur9);
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer-content a
+{
+    color: var(--couleur4);
+}
+
+/*-----------------------------------------------
+    08. 404
+-----------------------------------------------*/
+
+.unknown-bg 
+{
+    background-image: url(../public/hero/background.png);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    min-height: 100vh;
+}
+
+.unkown-container
+{
+    display: grid;
+    place-items: center;
+}
+
+.unknown-title
+{
+    padding-top: 10vh;
+    color: var(--couleur9);
+    font-weight: 500;
+    font-size: 75px;
+}
+
+.unknown-text
+{
+    display: flex;
+    place-items: center;
+    color: var(--couleur9);
+    font-size: 25px;
+}
