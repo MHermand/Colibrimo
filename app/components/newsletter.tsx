@@ -36,6 +36,7 @@ export const Newsletter = () => {
             toast.success("Adresse email enregistrée avec succès");
 
         } catch (error){
+            console.log("L'erreur suivante a été détectée :");
             console.log(error);
             if (!axios.isAxiosError(error)) return
             
