@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { Mail } from "lucide-react";
 import toast from "react-hot-toast";
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -36,6 +36,7 @@ export const Newsletter = () => {
             toast.success("Adresse email enregistrée avec succès");
 
         } catch (error){
+            console.log(error);
             if (!axios.isAxiosError(error)) return
             
             if (error.status == 520)
