@@ -77,6 +77,6 @@ export const Newsletter = () => {
                     </Form>
                 </div>
             </div>
-    </div>       
+        </div>       
     )
 }
